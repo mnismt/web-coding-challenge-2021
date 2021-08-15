@@ -70,6 +70,9 @@ const Panel = () => {
   }
   return (
     <div className="flex flex-col p-10 h-full w-full">
+       <h1 className="text-xl font-bold">
+        Mô phỏng số ca nhiễm COVID 19 bằng mô hình SIR
+      </h1>
       <h1 className="text-xl font-bold">
         Tỉnh: {province} - Dân số: {population} người
       </h1>
