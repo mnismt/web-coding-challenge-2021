@@ -14,8 +14,9 @@ const Panel = () => {
   const [data, setData] = useState({})
   useEffect(() => {
     console.log(province)
-    const population: any = provincePopulation[province]
+    const population: any = (provincePopulation as any)[province]
     setPopulation(parseInt(population))
+    setData({})
   }, [province])
   const calculateData = () => {
     const data = sir_sol(properties.step, properties.max)
