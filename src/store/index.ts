@@ -8,7 +8,7 @@ interface ProvinceStore {
 
 export const useProvinceStore = create<ProvinceStore>(
   devtools((set: any) => ({
-    province: 'Hà Nội',
+    province: 'Quảng Trị',
     setProvince(province) {
       set({ province })
     },

@@ -13,19 +13,20 @@ const Panel = () => {
   })
   const [data, setData] = useState({})
   useEffect(() => {
+    console.log(province)
     const population: any = provincePopulation[province]
     setPopulation(parseInt(population))
   }, [province])
   const calculateData = () => {
     const data = sir_sol(properties.step, properties.max)
-    var t = data.t
-    var S = data.y.map((x) => {
+    const t = data.t
+    const S = data.y.map((x) => {
       return x[0] * population
     })
-    var I = data.y.map((x) => {
+    const I = data.y.map((x) => {
       return x[1] * population
     })
-    var R = data.y.map((x) => {
+    const R = data.y.map((x) => {
       return x[2] * population
     })
     setData({
@@ -67,7 +68,7 @@ const Panel = () => {
     },
   }
   return (
-    <div className="flex flex-col p-4 h-full w-full">
+    <div className="flex flex-col p-10 h-full w-full">
       <h1 className="text-xl font-bold">
         Tỉnh: {province} - Dân số: {population} người
       </h1>
@@ -84,7 +85,7 @@ const Panel = () => {
           />
         </div>
         <div>
-        <p>Số ngày tối đa</p>
+          <p>Số ngày tối đa</p>
           <input
             type="number"
             placeholder="Số ngày"
